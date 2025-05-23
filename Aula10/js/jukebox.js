@@ -5,9 +5,18 @@ const btnTocar = document.getElementById('tocarMusica');
 const tocandoDiv = document.getElementById('tocando');
 const inputCodigo = document.getElementById('codigoMusica');
 const btnBuscar = document.getElementById('btnPesquisar');
+const btnSortear = document.getElementById('sortearMusica');
 
 const musicas = [];
 const MAX_MUSICAS = 8;
+
+btnSortear.addEventListener('click', function() {
+  var codigos = Object.keys(bancoMusicas);
+  var indiceSorteado = Math.floor(Math.random() * codigos.length);
+  var codigoSorteado = codigos[indiceSorteado];
+  var musicaSorteada = bancoMusicas[codigoSorteado];
+  inputMusica.value = musicaSorteada;
+});
 
 //pesquisa pelo código da música
 btnBuscar.addEventListener('click', function() {
